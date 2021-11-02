@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body,
+#root {
+  height: 100vh;
+  margin: 0;
+}
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-areas: 'header' 'main' 'footer';
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+}
+
+.header {
+  grid-area: header;
+  background-color: #203040;
+  display: flex;
+  align-items: center;
+}
+
+body,
+select,
+input,
+textarea {
+  font-size: 1.6rem;
+  font-family: 'poppins', arial, sans-serif;
+}
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+.header a:hover {
+  color: #ff8000;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
