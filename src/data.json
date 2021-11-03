@@ -1,0 +1,53 @@
+{
+    "products":[
+        {
+            "_id":"drees1",
+            "title":"Fashion Dress for winter",
+            "image":"/images/Dress1.jpg",
+            "description":"cotten dress with amazing features and soft",
+            "price":21.34,
+            "availablesize":["XL","XXL","SL"]
+        },
+        {
+            "_id":"drees2",
+            "title":"formal Dress for meetings",
+            "image":"/images/Dress2.jpg",
+            "description":"cold dress with an ice looking available in sizes",
+            "price":15.34,
+            "availablesize":["XL","XXL","SL"]
+        },
+        {
+            "_id":"drees3",
+            "title":"COLLUSION Unisex oversized joggers",
+            "image":"/images/Dress3.jpg",
+            "description":"this brand has you covered, we’re not kidding. Scroll the Bershka at ASOS edit",
+            "price":18.34,
+            "availablesize":["X","S","XS"]
+        },
+        {
+            "_id":"drees4",
+            "title":"Bershka waffle bodysuit and runner short co-ord in ecru",
+            "image":"/images/Dress4.jpg",
+            "description":"Serving new-new fashion and the best of basics, Bershka gets its inspiration from the latest music",
+            "price":34,
+            "availablesize":["SL","M","XXS"]
+        },
+        {
+            "_id":"drees5",
+            "title":"COLLUSION Unisex oversized joggers with print in acid wash co-ord",
+            "image":"/images/Dress5.jpg",
+            "description":"A new brand for the coming-of-age generation that refuses to compromise on principle or style, ",
+            "price":27,
+            "availablesize":["XL","XXL","SL"]
+        },
+        {
+            "_id":"drees6",
+            "title":"EXIST LOUDLY Unisex oversized joggers with print in black co-ord",
+            "image":"/images/Dress6.jpg",
+            "description":" COLLUSION believes clothes that celebrate self-expression and inclusivity should be the norm.",
+            "price":25.97,
+            "availablesize":["XL","XXL","SL"]
+        }
+
+    ]
+}
