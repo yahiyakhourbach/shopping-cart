@@ -1,4 +1,5 @@
 import React from 'react';
+import Cart from './components/Cart';
 import Filter from './components/Filter';
 import Products from './components/Products';
 import data from './data.json';
@@ -9,8 +10,35 @@ class App extends React.Component {
       products: data.products,
       size: '',
       sort: '',
+      cartItems: [],
     };
   }
+  /* implementing add to cart*/
+  AddToCart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    let itemUpdate = false;
+    cartItems.forEach((item) => {
+      if (item._id === product._id) {
+        item.count++;
+        itemUpdate = true;
+      }
+    });
+    if (!itemUpdate) {
+      cartItems.push({ ...product, count: 1 });
+    }
+    this.setState({ cartItems: cartItems });
+    console.log('hello');
+  };
+  /*RemoveItem function */
+  RemoveItem = (item) => {
+    const cartItems = this.state.cartItems
+      .slice()
+      .filter((x) => x._id !== item._id);
+
+    console.log(cartItems);
+    this.setState({ cartItems: cartItems });
+  };
+
   filterProduct = (event) => {
     if (event.target.value === '') {
       this.setState({ size: event.target.value, products: data.products });
@@ -43,7 +71,6 @@ class App extends React.Component {
             : -1
         ),
     }));
-    console.log(event.target.value);
   };
 
   render() {
@@ -62,9 +89,17 @@ class App extends React.Component {
                 sort={this.state.sort}
                 sortProduct={this.sortProdcut}
               />
-              <Products products={this.state.products} />
+              <Products
+                products={this.state.products}
+                AddToCart={this.AddToCart}
+              />
             </div>
-            <div className="sidebare">shopping cart</div>
+            <div className="sidebare">
+              <Cart
+                cartItems={this.state.cartItems}
+                RemoveItem={this.RemoveItem}
+              />
+            </div>
           </div>
         </main>
         <footer className="footer"> all Right is reserved</footer>

@@ -36,6 +36,11 @@ textarea {
 a {
   text-decoration: none;
 }
+button {
+  padding: 0.5rem;
+  border: 0.1rem #c0c0c0 solid;
+  cursor: pointer;
+}
 .header a {
   color: #fff;
   text-decoration: none;
@@ -108,11 +113,6 @@ a {
   font-size: 2rem;
   font-weight: 500;
 }
-.product-price button {
-  padding: 0.5rem;
-  border: 0.1rem #c0c0c0 solid;
-  cursor: pointer;
-}
 .product-price button:hover {
   border: 0.1rem #808080 solid;
 }
@@ -131,4 +131,65 @@ a {
 
 .filter div {
   filter: 1;
+}
+
+/* designing shopping cart*/
+
+.sidebare {
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-header {
+  padding: 1.5rem;
+  border-bottom: 0.1rem #918f8f solid;
+}
+.cart-body {
+  list-style-type: none;
+  margin: 1rem auto;
+  padding: 0px;
+}
+
+.cart-body li {
+  width: 90%;
+  margin: 0 auto;
+}
+/*cart items*/
+.cartItem-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cartItem-image img {
+  max-height: 8rem;
+  max-width: 9rem;
+  margin-right: 0.5rem;
+}
+.cartItem-body {
+  flex: 1;
+}
+.cartItem-detailes {
+  display: flex;
+
+  align-items: center;
+}
+
+.cartItem-detailes div,
+.cartItem-detailes button {
+  flex: 1;
+}
+
+.cart-checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 1rem auto;
+}
+.cart-checkout > div,
+.cart-checkout button {
+  flex: 1;
 }
