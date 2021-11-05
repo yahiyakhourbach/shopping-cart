@@ -193,3 +193,30 @@ button {
 .cart-checkout button {
   flex: 1;
 }
+input {
+  border: none;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  outline: none;
+  border-radius: 0.4rem;
+}
+/*checkOut form*/
+.sheckout-container {
+  padding: 1rem;
+  margin: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+}
+.form-group {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+}
+.button-group button {
+  flex: 1;
+  margin: 1rem;
+}

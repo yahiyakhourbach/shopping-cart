@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 export default class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showForm: false };
+  }
   render() {
     const { cartItems } = this.props;
     return (
@@ -49,10 +53,48 @@ export default class Cart extends Component {
                     return a + b.price * b.count;
                   }, 0)
                   .toFixed(2)}
+                $
               </div>
-              <button className="primary"> procced</button>
+              <button
+                className="primary"
+                onClick={() => {
+                  this.setState({ showForm: true });
+                }}
+              >
+                {' '}
+                procced
+              </button>
             </div>
           </>
+        )}
+        {this.state.showForm && (
+          <div className="sheckout-container">
+            <form
+              autoComplete="off"
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <div className="form-group">
+                <label>Name</label>
+                <input type="text" />
+              </div>
+              <div className="form-group">
+                <label>Email</label>
+                <input type="email" />
+              </div>
+              <div className="form-group">
+                <label>Password</label>
+                <input type="password" />
+              </div>
+              <div className="button-group">
+                <button type="button"> Cancel</button>
+                <button type="submit" className="primary">
+                  checkout
+                </button>
+              </div>
+            </form>
+          </div>
         )}
       </div>
     );

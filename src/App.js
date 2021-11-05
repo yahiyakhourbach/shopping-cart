@@ -3,6 +3,10 @@ import Cart from './components/Cart';
 import Filter from './components/Filter';
 import Products from './components/Products';
 import data from './data.json';
+import { cartItems, setCartItems } from './utile';
+
+const cartItem = cartItems();
+
 class App extends React.Component {
   constructor() {
     super();
@@ -10,7 +14,7 @@ class App extends React.Component {
       products: data.products,
       size: '',
       sort: '',
-      cartItems: [],
+      cartItems: cartItem,
     };
   }
   /* implementing add to cart*/
@@ -23,20 +27,20 @@ class App extends React.Component {
         itemUpdate = true;
       }
     });
+
     if (!itemUpdate) {
       cartItems.push({ ...product, count: 1 });
     }
     this.setState({ cartItems: cartItems });
-    console.log('hello');
+    setCartItems(cartItems);
   };
   /*RemoveItem function */
   RemoveItem = (item) => {
     const cartItems = this.state.cartItems
       .slice()
       .filter((x) => x._id !== item._id);
-
-    console.log(cartItems);
     this.setState({ cartItems: cartItems });
+    setCartItems(cartItems);
   };
 
   filterProduct = (event) => {
