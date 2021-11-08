@@ -6,7 +6,7 @@
             "image":"/images/Dress1.jpg",
             "description":"cotten dress with amazing features and soft",
             "price":21.34,
-            "availablesize":["XL","XXL","SL"]
+            "availableSize":["XL","XXL","SL"]
         },
         {
             "_id":"drees2",
@@ -14,7 +14,7 @@
             "image":"/images/Dress2.jpg",
             "description":"cold dress with an ice looking available in sizes",
             "price":15.34,
-            "availablesize":["XL","XXL","SL"]
+            "availableSize":["XL","XXL","SL"]
         },
         {
             "_id":"drees3",
@@ -22,7 +22,7 @@
             "image":"/images/Dress3.jpg",
             "description":"this brand has you covered, we’re not kidding. Scroll the Bershka at ASOS edit",
             "price":18.34,
-            "availablesize":["X","S","XS"]
+            "availableSize":["X","S","XS"]
         },
         {
             "_id":"drees4",
@@ -30,7 +30,7 @@
             "image":"/images/Dress4.jpg",
             "description":"Serving new-new fashion and the best of basics, Bershka gets its inspiration from the latest music",
             "price":34,
-            "availablesize":["SL","M","XXS"]
+            "availableSize":["SL","M","XXS"]
         },
         {
             "_id":"drees5",
@@ -38,7 +38,7 @@
             "image":"/images/Dress5.jpg",
             "description":"A new brand for the coming-of-age generation that refuses to compromise on principle or style, ",
             "price":27,
-            "availablesize":["XL","XXL","SL"]
+            "availableSize":["XL","XXL","SL"]
         },
         {
             "_id":"drees6",
@@ -46,7 +46,7 @@
             "image":"/images/Dress6.jpg",
             "description":" COLLUSION believes clothes that celebrate self-expression and inclusivity should be the norm.",
             "price":25.97,
-            "availablesize":["XL","XXL","SL"]
+            "availableSize":["XL","XXL","SL"]
         }
 
     ]
