@@ -4,7 +4,8 @@ import Filter from './components/Filter';
 import Products from './components/Products';
 import data from './data.json';
 import { cartItems, setCartItems } from './utile';
-
+import store from './store';
+import { Provider } from 'react-redux';
 const cartItem = cartItems();
 
 class App extends React.Component {
@@ -79,35 +80,34 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="grid-container">
-        <header className="header">
-          <a href="/">Shopping Cart</a>
-        </header>
-        <main className="main">
-          <div className="content">
-            <div className="main-content">
-              <Filter
-                count={this.state.products.length}
-                filterProduct={this.filterProduct}
-                size={this.state.size}
-                sort={this.state.sort}
-                sortProduct={this.sortProdcut}
-              />
-              <Products
-                products={this.state.products}
-                AddToCart={this.AddToCart}
-              />
+      <Provider store={store}>
+        <div className="grid-container">
+          <header className="header">
+            <a href="/">Shopping Cart</a>
+          </header>
+          <main className="main">
+            <div className="content">
+              <div className="main-content">
+                <Filter
+                  count={this.state.products.length}
+                  filterProduct={this.filterProduct}
+                  size={this.state.size}
+                  sort={this.state.sort}
+                  sortProduct={this.sortProdcut}
+                />
+                <Products AddToCart={this.AddToCart} />
+              </div>
+              <div className="sidebare">
+                <Cart
+                  cartItems={this.state.cartItems}
+                  RemoveItem={this.RemoveItem}
+                />
+              </div>
             </div>
-            <div className="sidebare">
-              <Cart
-                cartItems={this.state.cartItems}
-                RemoveItem={this.RemoveItem}
-              />
-            </div>
-          </div>
-        </main>
-        <footer className="footer"> all Right is reserved</footer>
-      </div>
+          </main>
+          <footer className="footer"> all Right is reserved</footer>
+        </div>
+      </Provider>
     );
   }
 }
