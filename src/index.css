@@ -58,6 +58,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 /* designing main content*/
 
@@ -204,7 +205,6 @@ input {
 .sheckout-container {
   padding: 1rem;
   margin: 1rem;
-  border: 0.1rem #c0c0c0 solid;
 }
 .form-group {
   margin: 1rem;
@@ -219,4 +219,43 @@ input {
 .button-group button {
   flex: 1;
   margin: 1rem;
+}
+/* product model design*/
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-height: 96vh;
+}
+.product-img {
+  flex: 1 0 40rem;
+}
+.product-img img {
+  max-height: 70vh;
+  max-width: 50rem;
+  margin-left: 5rem;
+}
+.product-detailes {
+  flex: 2 0 60rem;
+}
+.product-modal-price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}
+.product-modal-price div {
+  flex: 1;
+}
+.product-modal-price button {
+  flex: 2;
+}
+
+.model-close {
+  background-color: #f0c040;
+  position: fixed;
+  right: 6rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: 100000;
 }
