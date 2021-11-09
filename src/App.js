@@ -44,40 +44,6 @@ class App extends React.Component {
     setCartItems(cartItems);
   };
 
-  filterProduct = (event) => {
-    if (event.target.value === '') {
-      this.setState({ size: event.target.value, products: data.products });
-    } else {
-      this.setState({
-        products: data.products.filter(
-          (product) => product.availablesize.indexOf(event.target.value) >= 0
-        ),
-        size: event.target.value,
-      });
-    }
-  };
-  sortProdcut = (event) => {
-    const sort = event.target.value;
-    this.setState((state) => ({
-      sort: sort,
-      products: this.state.products
-        .slice()
-        .sort((a, b) =>
-          sort === 'Lowest'
-            ? a.price > b.price
-              ? 1
-              : -1
-            : sort === 'Highest'
-            ? a.price < b.price
-              ? 1
-              : -1
-            : a._id < b._id
-            ? 1
-            : -1
-        ),
-    }));
-  };
-
   render() {
     return (
       <Provider store={store}>
@@ -88,13 +54,7 @@ class App extends React.Component {
           <main className="main">
             <div className="content">
               <div className="main-content">
-                <Filter
-                  count={this.state.products.length}
-                  filterProduct={this.filterProduct}
-                  size={this.state.size}
-                  sort={this.state.sort}
-                  sortProduct={this.sortProdcut}
-                />
+                <Filter />
                 <Products AddToCart={this.AddToCart} />
               </div>
               <div className="sidebare">

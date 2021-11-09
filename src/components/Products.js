@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
-import { fetchProducts } from '../actions/productActions.js';
+import { fetchProducts, filterProducts } from '../actions/productActions.js';
 Modal.setAppElement('#root');
 class Products extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class Products extends Component {
             {!this.props.products ? (
               <div>loading...</div>
             ) : (
-              this.props.products.map((product) => (
+              this.props.filtredProducts.map((product) => (
                 <li key={product._id}>
                   <div className="product">
                     <a
@@ -113,6 +113,13 @@ class Products extends Component {
   }
 }
 
-export default connect((state) => ({ products: state.products.items }), {
-  fetchProducts,
-})(Products);
+export default connect(
+  (state) => ({
+    products: state.products.items,
+    filtredProducts: state.products.filtredItems,
+  }),
+  {
+    fetchProducts,
+    filterProducts,
+  }
+)(Products);
