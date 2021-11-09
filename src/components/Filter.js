@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { filterProducts, sortProducts } from '../actions/productActions.js';
 class Filter extends Component {
   render() {
-    console.log(this.props.filtredproducts);
     return !this.props.filtredproducts ? (
       <div>Loading...</div>
     ) : (
