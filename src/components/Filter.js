@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { filterProducts, sortProducts } from '../actions/productActions.js';
 class Filter extends Component {
   render() {
-    return (
+    console.log(this.props.filtredproducts);
+    return !this.props.filtredproducts ? (
+      <div>Loading...</div>
+    ) : (
       <div className="filter">
-        <div className="filter-result">{this.props.count} Products</div>
+        <div className="filter-result">
+          {this.props.filtredproducts.length} Products
+        </div>
         <div className="filter-sort">
           Order{' '}
-          <select value={this.props.sort} onChange={this.props.sortProduct}>
-            <option value="">Latest</option>
+          <select
+            value={this.props.order}
+            onChange={(e) =>
+              this.props.sortProducts(
+                this.props.filtredproducts,
+                e.target.value
+              )
+            }
+          >
+            <option value="Latest">Latest</option>
             <option value="Lowest">Lowest</option>
-            <option value="Highest">Highest</option>
+            <option value="Heighest">Highest</option>
           </select>
         </div>
         <div className="filter-size">
           Filter size{' '}
-          <select value={this.props.size} onChange={this.props.filterProduct}>
+          <select
+            value={this.props.size}
+            onChange={(e) =>
+              this.props.filterProducts(this.props.products, e.target.value)
+            }
+          >
             <option value="">All</option>
             <option value="XS">XS</option>
             <option value="S">S</option>
@@ -30,4 +49,15 @@ class Filter extends Component {
   }
 }
 
-export default Filter;
+export default connect(
+  (state) => ({
+    size: state.products.size,
+    order: state.products.order,
+    products: state.products.items,
+    filtredproducts: state.products.filtredItems,
+  }),
+  {
+    filterProducts,
+    sortProducts,
+  }
+)(Filter);
