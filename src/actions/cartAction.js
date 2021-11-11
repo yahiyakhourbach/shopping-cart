@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DELETE_FROM_CART } from '../types';
+import { ADD_TO_CART, ClEAR_CART, DELETE_FROM_CART } from '../types';
 import { setCartItems } from '../utile';
 
 export const addtocart = (product) => (dispatch, getState) => {
@@ -29,4 +29,8 @@ export const RemoveFromCart = (product, items) => (dispatch) => {
     type: DELETE_FROM_CART,
     payload: { cartItems },
   });
+};
+
+export const clearCart = () => (dispatch) => {
+  dispatch({ type: ClEAR_CART });
 };

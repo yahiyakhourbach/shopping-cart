@@ -259,3 +259,23 @@ input {
   height: 4rem;
   z-index: 100000;
 }
+
+.order-detailes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order-detailes p {
+  color: rgb(67, 197, 67);
+  font-size: 2rem;
+}
+.order-detailes ul {
+  list-style: none;
+}
+.order-detailes ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
